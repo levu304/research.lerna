@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "dev": "concurrently \"tsc --declaration --watch\" \"nodemon -q dist/index.js\"",
     "test": "mocha",
     "build": "concurrently \"rimraf dist\" \"webpack\"",
     "serve": "node dist/index.js"
