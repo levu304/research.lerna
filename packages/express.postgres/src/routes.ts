@@ -1,11 +1,10 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { getAbout, getIndex } from "./controllers/pages";
 
 const routes: Router = Router();
 
-routes.get("/", (req: Request, res: Response) => {
-  res.status(200).json({
-    message: "Hello index",
-  });
-});
+routes.get("/", getIndex);
+
+routes.get("/about", getAbout);
 
 export default routes;

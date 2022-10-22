@@ -9,7 +9,7 @@ module.exports = {
     // the output file name
     filename: "[name].js",
     // the output path
-    path: path.resolve(__dirname, "lib"),
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
