@@ -1,10 +1,17 @@
 import { Router } from "express";
 import { getAbout, getIndex } from "./controllers/pages";
+import multer, { memoryStorage, Multer } from "multer";
+import { downloadFile, uploadFile } from "./controllers/file";
 
-const routes: Router = Router();
+const upload: Multer = multer({ storage: memoryStorage() });
+const router: Router = Router();
 
-routes.get("/", getIndex);
+router.get("/", getIndex);
 
-routes.get("/about", getAbout);
+router.get("/about", getAbout);
 
-export default routes;
+router.post("/upload-file", upload.single("file"), uploadFile);
+
+router.get("/download", downloadFile);
+
+export default router;

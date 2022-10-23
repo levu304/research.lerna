@@ -4,26 +4,31 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "concurrently \"tsc --declaration --watch\" \"nodemon -q dist/index.js\"",
+    "dev": "concurrently \"rimraf dist\" \"tsc --declaration --watch\" \"nodemon -q dist/index.js\"",
     "test": "mocha",
     "build": "concurrently \"rimraf dist\" \"webpack\"",
     "serve": "node dist/index.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "@types/multer": "^1.4.7",
+    "@types/streamifier": "^0.1.0",
     "@types/webpack": "^5.28.0",
     "chai": "*",
     "chai-http": "*",
     "concurrently": "^7.5.0",
     "mocha": "*",
     "nodemon": "^2.0.20",
+    "rimraf": "*",
+    "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.1",
     "webpack": "5.73.0",
     "webpack-cli": "^4.10.0",
-    "webpack-node-externals": "^3.0.0",
-    "rimraf": "*"
+    "webpack-node-externals": "^3.0.0"
   }
 }
